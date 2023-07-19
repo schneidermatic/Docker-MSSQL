@@ -1,2 +1,2 @@
-# SQL-Server-Express
-Docker-Compose project for running SQL Server Express
+# Docker Microsoft SQL Server Express
+Docker-Compose project for running Microsoft SQL Server Express
