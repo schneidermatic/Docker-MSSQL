@@ -1,5 +1,5 @@
 ﻿## MSSQL Connection String 
-## Server=localhost,1433;Initial Catalog=MyDb;Integrated Security=True;User Id=sa;Password=ChangeMe!00;
+## Server=localhost,1433;Initial Catalog=MyDb;Integrated Security=True;User Id=sa;Password=ChangeMe!123;
 
 version: '3.1'
 
@@ -7,7 +7,7 @@ services:
 
   mssql:
     image: mcr.microsoft.com/mssql/server:latest
-    container_name: mssql01
+    container_name: mssql02
     restart: always
     ports:
       - 1433:1433
@@ -17,10 +17,6 @@ services:
       MSSQL_PID: Express
       TZ: $TIME_ZONE
     volumes:
-      - ./data/examples:/var/opt/examples:rw
-      - ./data/backups:/var/opt/backups:rw
       - ./data/mssql:/var/opt/mssql:rw
-      #- mssqldb01:/var/opt/mssql:rw
-
-#volumes:
-#  mssqldb01:
+      - ./data/backups:/var/opt/backups:rw
+      - ./data/samples:/var/opt/samples:rw
