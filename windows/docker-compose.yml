@@ -2,11 +2,10 @@
 ## Server=localhost,1433;Initial Catalog=MyDb;Integrated Security=True;User Id=sa;Password=ChangeMe!123;
 
 version: '3.1'
-
 services:
   mssql:
-    image: mcr.microsoft.com/mssql/server:latest
-    container_name: mssql02
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssql01
     restart: always
     ports:
       - 1433:1433
