@@ -4,16 +4,16 @@
 version: '3.1'
 services:
   mssql:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: mcr.microsoft.com/mssql/server:$MSSQL_TAG
     container_name: mssql01
     restart: always
     ports:
       - 1433:1433
     environment:
-      ACCEPT_EULA: Yes
-      SA_PASSWORD: $SA_PASSWORD
-      MSSQL_PID: Express
-      TZ: $TIME_ZONE
+      ACCEPT_EULA: $MSSQL_ACCEPT_EULA
+      MSSQL_SA_PASSWORD: $MSSQL_SA_PASSWORD
+      MSSQL_PID: $MSSQL_PID
+      TZ: $MSSQL_TIME_ZONE
     volumes:
       - ./data/mssql:/var/opt/mssql:rw
       - ./data/backups:/var/opt/backups:rw
