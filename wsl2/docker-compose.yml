@@ -15,6 +15,8 @@ services:
       MSSQL_PID: $MSSQL_PID
       TZ: $MSSQL_TIME_ZONE
     volumes:
-      - ./data/mssql:/var/opt/mssql:rw
-      - ./data/backups:/var/opt/backups:rw
+      - mssqldb01:/var/opt/backups:rw
       - ./data/samples:/var/opt/samples:rw
+
+volumes:
+    mssqldb01:
